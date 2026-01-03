@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO OPTIMIZATION -->
+    <title>BIKASPRO | Vendor Merchandise & Souvenir Kreatif Jakarta</title>
+    <meta name="description" content="Pusat produksi merchandise kantor, seminar kit, dan hampers perusahaan dengan desain kreatif. Vendor terpercaya di Jakarta.">
+    
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- LUCIDE ICONS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GOOGLE FONTS: Oswald (Bold Headings) & DM Sans (Modern Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CUSTOM CONFIG -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        heading: ['"Oswald"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF5200', // Vibrant Orange
+                            black: '#111111',
+                            gray: '#F3F4F6',
+                        }
+                    },
+                    boxShadow: {
+                        'hard': '4px 4px 0px 0px rgba(0,0,0,1)',
+                        'hard-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+                        'hard-lg': '8px 8px 0px 0px rgba(0,0,0,1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for Brutalist Vibe */
+        .border-hard { border: 2px solid #111; }
+        .btn-brutal {
+            transition: all 0.2s ease;
+        }
+        .btn-brutal:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+        }
+        .btn-brutal:active {
+            transform: translate(0px, 0px);
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+        }
+        
+        .fade-in { animation: fadeIn 0.5s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-white text-brand-black font-sans flex flex-col min-h-screen">
+
+    <!-- NAVIGATION (Style: Bold Border) -->
+    <nav class="fixed w-full z-50 bg-white border-b-2 border-brand-black top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div onclick="switchPage('home')" class="cursor-pointer flex items-center gap-2 select-none">
+                <div class="w-10 h-10 bg-brand-black text-white flex items-center justify-center font-heading font-bold text-xl border-2 border-transparent">
+                    B
+                </div>
+                <span class="font-heading font-bold text-3xl tracking-tighter uppercase">Bikaspro<span class="text-brand-orange">.</span></span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <button onclick="switchPage('home')" class="font-bold uppercase tracking-wide text-sm hover:text-brand-orange transition-colors">Beranda</button>
+                <button onclick="switchPage('catalog')" class="font-bold uppercase tracking-wide text-sm hover:text-brand-orange transition-colors">Katalog</button>
+                <button onclick="switchPage('about')" class="font-bold uppercase tracking-wide text-sm hover:text-brand-orange transition-colors">Studio</button>
+                <a href="https://wa.me/6281234567890" target="_blank" class="bg-brand-orange text-white border-2 border-brand-black px-6 py-2 font-heading font-bold tracking-wider shadow-hard hover:-translate-y-1 hover:shadow-hard-lg transition-all">
+                    GET A QUOTE
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 border-2 border-brand-black rounded shadow-hard-sm">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-brand-orange border-b-2 border-brand-black p-0 flex flex-col shadow-xl">
+            <button onclick="switchPage('home')" class="text-left text-xl font-heading font-bold text-white border-b-2 border-brand-black p-4 hover:bg-black hover:text-brand-orange transition-colors">BERANDA</button>
+            <button onclick="switchPage('catalog')" class="text-left text-xl font-heading font-bold text-white border-b-2 border-brand-black p-4 hover:bg-black hover:text-brand-orange transition-colors">KATALOG</button>
+            <button onclick="switchPage('about')" class="text-left text-xl font-heading font-bold text-white border-b-2 border-brand-black p-4 hover:bg-black hover:text-brand-orange transition-colors">STUDIO</button>
+            <button onclick="switchPage('contact')" class="text-left text-xl font-heading font-bold text-white p-4 hover:bg-black hover:text-brand-orange transition-colors">KONTAK</button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow pt-[76px]"> <!-- Offset for fixed navbar -->
+        
+        <!-- ================= HOME PAGE ================= -->
+        <div id="home-page" class="page-section fade-in">
+            
+            <!-- 1. Hero Section (Style: High Contrast / Grid) -->
+            <header class="border-b-2 border-brand-black bg-brand-gray relative overflow-hidden">
+                <!-- Decorative Grid Background -->
+                <div class="absolute inset-0" style="background-image: radial-gradient(#111 1px, transparent 1px); background-size: 20px 20px; opacity: 0.1;"></div>
+                
+                <div class="container mx-auto px-6 py-16 md:py-24 relative z-10">
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <div class="inline-block bg-brand-black text-white px-3 py-1 font-bold text-xs uppercase tracking-widest mb-6 rotate-1">
+                                Since 2020 • Jakarta Based
+                            </div>
+                            <h1 class="font-heading text-6xl md:text-8xl font-bold leading-[0.9] mb-6 uppercase">
+                                Make Your <br>
+                                <span class="text-brand-orange">Brand</span> Iconic.
+                            </h1>
+                            <p class="text-xl text-gray-700 mb-10 max-w-lg font-medium border-l-4 border-brand-orange pl-4">
+                                Vendor merchandise korporat dengan standar produksi tinggi. Kami mengubah ide branding Anda menjadi produk fisik yang berkelas.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button onclick="switchPage('catalog')" class="bg-brand-black text-white px-8 py-4 font-heading font-bold text-lg border-2 border-brand-black shadow-hard hover:-translate-y-1 transition-all">
+                                    LIHAT KATALOG
+                                </button>
+                                <button onclick="switchPage('about')" class="bg-white text-brand-black px-8 py-4 font-heading font-bold text-lg border-2 border-brand-black shadow-hard hover:-translate-y-1 transition-all">
+                                    KENAPA KAMI?
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:w-1/2 w-full relative">
+                            <div class="border-2 border-brand-black bg-white p-2 shadow-hard-lg rotate-1">
+                                <div class="aspect-[4/3] bg-gray-200 overflow-hidden border border-gray-300">
+                                    <img src="./images/hero_banner.jpg" onerror="this.src='https://via.placeholder.com/800x600?text=BIKASPRO+MERCH'" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <!-- Sticker Element -->
+                            <div class="absolute -top-6 -right-6 w-24 h-24 bg-brand-orange rounded-full flex items-center justify-center text-white font-heading font-bold text-center text-sm border-2 border-brand-black animate-spin-slow shadow-hard">
+                                QUALITY<br>GUARANTEE
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 2. Marquee Text (Style: Running Text) -->
+            <div class="bg-brand-orange text-white border-b-2 border-brand-black overflow-hidden py-3">
+                <div class="whitespace-nowrap animate-marquee font-heading font-bold text-xl tracking-widest">
+                    SEMINAR KIT • CORPORATE GIFTS • ADVERTISING • ONBOARDING KIT • CUSTOM MERCHANDISE • SEMINAR KIT • CORPORATE GIFTS • ADVERTISING • ONBOARDING KIT • CUSTOM MERCHANDISE
+                </div>
+            </div>
+            <style>.animate-marquee { animation: marquee 20s linear infinite; } @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }</style>
+
+            <!-- 3. Featured Categories (Style: Brutalist Cards) -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="flex justify-between items-end mb-12 border-b-2 border-brand-black pb-4">
+                        <h2 class="font-heading text-4xl font-bold uppercase">Kategori Unggulan</h2>
+                        <button onclick="goToPackageCatalog()" class="hidden md:block font-bold underline hover:text-brand-orange">Lihat Semua</button>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <div class="border-2 border-brand-black bg-white p-6 shadow-hard hover:shadow-hard-lg transition-all cursor-pointer" onclick="goToPackageCatalog()">
+                            <div class="h-12 w-12 bg-brand-gray border-2 border-brand-black flex items-center justify-center mb-4">
+                                <i data-lucide="package" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl font-bold mb-2">PAKET SEMINAR</h3>
+                            <p class="text-sm text-gray-600 mb-4">Solusi praktis untuk event kampus dan workshop. Hemat & Efisien.</p>
+                            <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-orange w-3/4"></div>
+                            </div>
+                            <div class="mt-2 text-xs font-bold text-right">POPULAR</div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="border-2 border-brand-black bg-brand-black text-white p-6 shadow-hard hover:shadow-hard-lg transition-all transform md:-translate-y-4 cursor-pointer" onclick="goToPackageCatalog()">
+                            <div class="h-12 w-12 bg-brand-orange border-2 border-white text-brand-black flex items-center justify-center mb-4">
+                                <i data-lucide="briefcase" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl font-bold mb-2 text-brand-orange">ONBOARDING KIT</h3>
+                            <p class="text-sm text-gray-300 mb-4">Sambut karyawan baru dengan merchandise profesional.</p>
+                            <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-white w-full"></div>
+                            </div>
+                            <div class="mt-2 text-xs font-bold text-right text-brand-orange">BEST SELLER</div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="border-2 border-brand-black bg-white p-6 shadow-hard hover:shadow-hard-lg transition-all cursor-pointer" onclick="goToPackageCatalog()">
+                            <div class="h-12 w-12 bg-brand-gray border-2 border-brand-black flex items-center justify-center mb-4">
+                                <i data-lucide="gift" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl font-bold mb-2">VIP HAMPERS</h3>
+                            <p class="text-sm text-gray-600 mb-4">Hadiah eksklusif untuk klien prioritas dan direksi.</p>
+                            <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-orange w-1/2"></div>
+                            </div>
+                            <div class="mt-2 text-xs font-bold text-right">PREMIUM</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. CTA Section (Style: Bold Banner) -->
+            <section class="bg-brand-orange border-y-2 border-brand-black py-20 relative overflow-hidden">
+                <!-- Abstract Lines -->
+                <div class="absolute -right-20 top-0 w-64 h-full border-l-2 border-black transform -skew-x-12 bg-white opacity-10"></div>
+                
+                <div class="container mx-auto px-6 text-center relative z-10">
+                    <h2 class="font-heading text-5xl md:text-6xl font-bold text-white mb-6 uppercase text-shadow-sm" style="text-shadow: 4px 4px 0 #000;">
+                        Butuh Penawaran Cepat?
+                    </h2>
+                    <p class="text-brand-black font-bold text-xl mb-10 max-w-2xl mx-auto bg-white/20 p-2 inline-block">
+                        Konsultasi Gratis. Respon di bawah 15 menit pada jam kerja.
+                    </p>
+                    <br>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="inline-flex items-center gap-3 bg-brand-black text-white px-10 py-5 font-heading font-bold text-xl border-2 border-white shadow-hard hover:bg-white hover:text-black hover:border-black transition-all">
+                        <i data-lucide="message-square"></i> CHAT WHATSAPP
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= CATALOG PAGE ================= -->
+        <div id="catalog-page" class="page-section hidden fade-in py-12 bg-white min-h-screen">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+                    <div>
+                        <h1 class="font-heading text-5xl font-bold text-brand-black uppercase mb-2">Katalog Produk</h1>
+                        <div class="h-2 w-24 bg-brand-orange"></div>
+                    </div>
+                    <p class="text-gray-600 max-w-md text-sm md:text-right">
+                        Semua produk dapat dikustomisasi dengan logo perusahaan Anda. <br>Minimal order menyesuaikan jenis produk.
+                    </p>
+                </div>
+
+                <!-- Filter (Style: Tags) -->
+                <div class="flex flex-wrap gap-2 mb-12 pb-4 border-b-2 border-brand-black" id="category-filters">
+                    <!-- JS populated -->
+                </div>
+
+                <!-- Product Grid -->
+                <div id="catalog-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- JS populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= ABOUT PAGE ================= -->
+        <div id="about-page" class="page-section hidden fade-in py-16 bg-brand-gray">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="bg-white border-2 border-brand-black p-8 md:p-12 shadow-hard-lg">
+                    <div class="flex flex-col md:flex-row gap-10 items-center mb-12">
+                        <div class="md:w-1/2">
+                            <h1 class="font-heading text-5xl font-bold uppercase mb-6">Behind The <br><span class="text-brand-orange">Brand.</span></h1>
+                            <p class="text-lg font-medium leading-relaxed">
+                                BIKASPRO bukan sekadar vendor. Kami adalah partner kreatif Anda dalam menciptakan *corporate identity* yang kuat melalui merchandise fisik.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 w-full">
+                            <div class="aspect-video bg-gray-200 border-2 border-brand-black relative">
+                                <img src="./images/about_production_warehouse.jpg" onerror="this.style.display='none'" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                                <div class="absolute inset-0 flex items-center justify-center border-2 border-white m-2 pointer-events-none">
+                                    <span class="font-heading text-white text-2xl font-bold drop-shadow-md">EST. 2020</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-t-2 border-brand-black pt-8">
+                        <div>
+                            <div class="font-heading text-4xl font-bold text-brand-orange">50+</div>
+                            <div class="text-xs font-bold uppercase tracking-wider">Klien Korporat</div>
+                        </div>
+                        <div>
+                            <div class="font-heading text-4xl font-bold text-brand-orange">100+</div>
+                            <div class="text-xs font-bold uppercase tracking-wider">Project Selesai</div>
+                        </div>
+                        <div>
+                            <div class="font-heading text-4xl font-bold text-brand-orange">46+</div>
+                            <div class="text-xs font-bold uppercase tracking-wider">Varian Produk</div>
+                        </div>
+                        <div>
+                            <div class="font-heading text-4xl font-bold text-brand-orange">5+</div>
+                            <div class="text-xs font-bold uppercase tracking-wider">Kota Jangkauan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= CONTACT PAGE ================= -->
+        <div id="contact-page" class="page-section hidden fade-in py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <h1 class="font-heading text-6xl font-bold uppercase leading-none">Let's <br>Work <span class="text-brand-orange">Together.</span></h1>
+                        <p class="text-gray-600 text-lg">Siap mendiskusikan project merchandise Anda? Tim kami siap membantu memberikan solusi terbaik.</p>
+                        
+                        <div class="border-l-4 border-brand-black pl-6 space-y-4">
+                            <div>
+                                <h4 class="font-bold uppercase text-sm text-gray-400">Alamat</h4>
+                                <p class="font-medium text-lg">Jl. TB Simatupang No. 88,<br>Jakarta Selatan, DKI Jakarta</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold uppercase text-sm text-gray-400">Kontak</h4>
+                                <p class="font-medium text-lg">+62 812 3456 7890</p>
+                                <p class="font-medium text-lg">hello@bikaspro.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form (Style: Brutalist Input) -->
+                    <div class="bg-brand-gray border-2 border-brand-black p-8 shadow-hard">
+                        <form onsubmit="event.preventDefault(); window.open('https://wa.me/6281234567890', '_blank')" class="space-y-6">
+                            <div>
+                                <label class="block font-bold uppercase text-xs mb-2">Nama Lengkap</label>
+                                <input type="text" class="w-full p-4 bg-white border-2 border-brand-black focus:outline-none focus:shadow-hard transition-all" placeholder="Nama Anda">
+                            </div>
+                            <div>
+                                <label class="block font-bold uppercase text-xs mb-2">Perusahaan</label>
+                                <input type="text" class="w-full p-4 bg-white border-2 border-brand-black focus:outline-none focus:shadow-hard transition-all" placeholder="Nama Perusahaan">
+                            </div>
+                            <div>
+                                <label class="block font-bold uppercase text-xs mb-2">Kebutuhan</label>
+                                <textarea rows="4" class="w-full p-4 bg-white border-2 border-brand-black focus:outline-none focus:shadow-hard transition-all" placeholder="Ceritakan detail project Anda..."></textarea>
+                            </div>
+                            <button class="w-full bg-brand-black text-white font-heading font-bold text-xl py-4 border-2 border-brand-black hover:bg-brand-orange hover:border-brand-black transition-colors">
+                                KIRIM PESAN ->
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER (Style: Bold Clean) -->
+    <footer class="bg-brand-black text-white py-12 border-t-4 border-brand-orange mt-auto">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <div class="font-heading font-bold text-3xl mb-1">BIKASPRO.</div>
+                <p class="text-gray-400 text-sm">© 2025 BintangKasa Produksi. Jakarta.</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="h-10 w-10 border border-white flex items-center justify-center hover:bg-white hover:text-black transition-all"><i data-lucide="instagram"></i></a>
+                <a href="#" class="h-10 w-10 border border-white flex items-center justify-center hover:bg-white hover:text-black transition-all"><i data-lucide="linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DATA & LOGIC -->
+    <script>
+        // --- DATA (SAMA DENGAN VERSI FINAL SEBELUMNYA - 46 ITEMS) ---
+        const PACKAGES = [/* Data paket sama seperti sebelumnya */]; // Placeholder for logic reuse
+        const CATEGORIES = [
+            { id: 'packages', name: 'Paket' },
+            { id: 'drinkware', name: 'Drinkware' },
+            { id: 'apparel', name: 'Apparel' },
+            { id: 'printing', name: 'Print' },
+            { id: 'advertising', name: 'Ads' },
+            { id: 'booth', name: 'Booth' },
+            { id: 'packaging', name: 'Box' },
+            { id: 'stationary', name: 'Stationery' },
+            { id: 'tech', name: 'Tech' },
+            { id: 'lanyard', name: 'Lanyard' },
+        ];
+
+        // COPY FULL PRODUCTS ARRAY HERE FROM PREVIOUS VERSION
+        const PRODUCTS = [
+            // Paket
+            { category: 'packages', name: 'Basic Seminar Kit A', desc: 'Tote Bag Spunbond + Blocknote + Pulpen', img: 'package_seminar_basic.jpg' },
+            { category: 'packages', name: 'Standard Seminar Kit B', desc: 'Tote Bag Kanvas + Tumbler Plastik + Note', img: 'package_seminar_standard.jpg' },
+            { category: 'packages', name: 'Onboarding Kit Lite', desc: 'Box Corrugated + Mug + Kaos Polos', img: 'package_onboarding_lite.jpg' },
+            { category: 'packages', name: 'New Employee Pro', desc: 'Hardbox + Tumbler Niagara + Polo Shirt', img: 'package_onboarding_pro.jpg' },
+            { category: 'packages', name: 'VIP Gift Set Gold', desc: 'Hardbox Magnet + Powerbank + E-Money', img: 'package_vip_gold.jpg' },
+            { category: 'packages', name: 'Executive Hampers', desc: 'Leather Agenda + Metal Pen + Tumbler Suhu', img: 'package_executive.jpg' },
+            // Drinkware
+            { category: 'drinkware', name: 'Tumbler Niagara 500ml', desc: 'Stainless Steel SUS 304, Tahan 12 Jam', img: 'product_tumbler_niagara.jpg' },
+            { category: 'drinkware', name: 'Mug Keramik Custom', desc: 'Decal Print High Quality', img: 'product_mug_custom.jpg' },
+            { category: 'drinkware', name: 'Tumbler Sakura LED', desc: 'Indikator Suhu Digital, Rubber Paint', img: 'product_tumbler_sakura.jpg' },
+            { category: 'drinkware', name: 'Tumbler Plastik Insert Paper', desc: 'Bahan Plastik, Bisa Insert Kertas Full Color', img: 'product_tumbler_plastic.jpg' },
+            { category: 'drinkware', name: 'Tumbler Japan Style', desc: 'Stainless Steel, Tutup Kancing / Clip', img: 'product_tumbler_japan.jpg' },
+            // Printing
+            { category: 'printing', name: 'Kartu Nama Eksekutif', desc: 'Fancy Paper + Laminasi Doff', img: 'product_business_card.jpg' },
+            { category: 'printing', name: 'Roll Up Banner 60x160', desc: 'Rangka Alumunium, Bahan Albatros', img: 'product_rollup_banner.jpg' },
+            { category: 'printing', name: 'Stiker Label Die-Cut', desc: 'Vinyl / Chromo, Kiss Cut Sheet A3', img: 'product_sticker_diecut.jpg' },
+            { category: 'printing', name: 'Company Profile Book', desc: 'Jilid Spiral / Perfect Binding, Full Color', img: 'product_company_profile.jpg' },
+            { category: 'printing', name: 'ID Card PVC', desc: 'Bahan PVC Tebal (Seperti ATM), Print 2 Sisi', img: 'product_id_card.jpg' },
+            { category: 'printing', name: 'Sticker Label Botol / Kosmetik', desc: 'Vinyl Transparan / Gold / Silver, Anti Air & Minyak', img: 'product_sticker_label_bottle.jpg' },
+            // Advertising
+            { category: 'advertising', name: 'Neon Box Acrylic', desc: 'LED Luminous, Cutting Sticker', img: 'product_neon_box.jpg' },
+            { category: 'advertising', name: 'Huruf Timbul 3D', desc: 'Stainless / Acrylic Backlight', img: 'product_3d_lettering.jpg' },
+            { category: 'advertising', name: 'Car Branding / Wrapping', desc: 'Stiker Mobil Operasional Full Body', img: 'product_car_branding.jpg' },
+            { category: 'advertising', name: 'Sticker Sandblast Kaca', desc: 'Branding Privasi Ruang Kaca / One Way Vision', img: 'product_sticker_sandblast.jpg' },
+            { category: 'advertising', name: 'Running Text LED', desc: 'Display Tulisan Berjalan WiFi (Indoor/Outdoor)', img: 'product_running_text.jpg' },
+            { category: 'advertising', name: 'Tripod Banner Stand', desc: 'Display Poster 2 Sisi, Kokoh', img: 'product_tripod_banner.jpg' },
+            // Booth
+            { category: 'booth', name: 'Event Desk Portable', desc: 'Meja Promosi PVC Bongkar Pasang', img: 'product_event_desk.jpg' },
+            { category: 'booth', name: 'Backwall Portable', desc: 'Spider System (Lurus/Lengkung) + Trolley', img: 'product_backwall_display.jpg' },
+            { category: 'booth', name: 'Pop-Up Counter Table', desc: 'Meja Pameran Premium, Sistem Magnet', img: 'product_popup_table.jpg' },
+            // Packaging
+            { category: 'packaging', name: 'Hardbox Custom Magnet', desc: 'Board No. 30, Full Color Cover', img: 'product_hardbox_gift.jpg' },
+            { category: 'packaging', name: 'Paper Bag Premium', desc: 'Bahan Art Carton 260gr, Laminasi', img: 'product_paperbag.jpg' },
+            { category: 'packaging', name: 'Corrugated Box Mailer', desc: 'Dus E-Flute Die Cut, Sablon Logo', img: 'product_corrugated_box.jpg' },
+            { category: 'packaging', name: 'Bubble Mailer Poly', desc: 'Amplop Plastik Bubble Waterproof + Sablon', img: 'product_bubble_mailer.jpg' },
+            { category: 'packaging', name: 'Tote Bag Spunbond', desc: 'Press / Jahit, Sablon 1 Warna', img: 'product_totebag_spunbond.jpg' },
+            { category: 'packaging', name: 'Tote Bag Blacu', desc: 'Warna Natural, Sablon Full Color', img: 'product_totebag_blacu.jpg' },
+            { category: 'packaging', name: 'Tote Bag Kanvas Premium', desc: 'Bahan Tebal, Jahitan Kuat, Resleting', img: 'product_totebag_kanvas.jpg' },
+            // Stationary
+            { category: 'stationary', name: 'Notebook Hardcover A5', desc: 'PU Leather, Deboss Logo, Tali Karet', img: 'product_notebook_leather.jpg' },
+            { category: 'stationary', name: 'Pulpen Metal Executive', desc: 'Laser Engraved Logo, Heavy Weight', img: 'product_pen_metal.jpg' },
+            { category: 'stationary', name: 'Agenda Kerja Tahunan', desc: 'Isi Custom HVS 80gr, Pita Pembatas', img: 'product_agenda_custom.jpg' },
+            { category: 'stationary', name: 'Block Note Seminar A6', desc: 'Jilid Lem Atas, Isi 50 Lembar HVS', img: 'product_blocknote_a6.jpg' },
+            { category: 'stationary', name: 'Pulpen Plastik Promosi', desc: 'Sablon Logo, Tali Tisu / Model Cetekan', img: 'product_pen_plastic.jpg' },
+            // Apparel
+            { category: 'apparel', name: 'Polo Shirt Lacoste', desc: 'Bordir Komputer Presisi', img: 'product_polo_shirt.jpg' },
+            { category: 'apparel', name: 'Coach Jacket Parasut', desc: 'Sablon DTF / Windbreaker', img: 'product_jacket_coach.jpg' },
+            { category: 'apparel', name: 'Kemeja PDH / PDL', desc: 'Bahan Drill / Tropical, Bordir Logo', img: 'product_kemeja_kerja.jpg' },
+            { category: 'apparel', name: 'Kaos Cotton Combed 30s', desc: 'Sablon Plastisol / DTF, Bahan Adem', img: 'product_tshirt_combed.jpg' },
+            // Tech
+            { category: 'tech', name: 'Powerbank 10.000mAh', desc: 'Slim Design, UV Print Full Color', img: 'product_powerbank.jpg' },
+            { category: 'tech', name: 'Flashdisk Kartu / Metal', desc: 'Chip Grade A, Garansi 1 Tahun', img: 'product_flashdisk.jpg' },
+            { category: 'tech', name: 'E-Money / Flazz Custom', desc: 'Print UV 1 Sisi / 2 Sisi, Saldo 0', img: 'product_emoney_custom.jpg' },
+            // Lanyard
+            { category: 'lanyard', name: 'Lanyard Tisu 2cm', desc: 'Full Color Sublimation + Stopper', img: 'product_lanyard_detail.jpg' },
+        ];
+
+        // --- RENDER LOGIC ---
+
+        function goToPackageCatalog() {
+            switchPage('catalog');
+            filterCatalog('packages');
+            window.scrollTo({top: 0, behavior: 'instant'}); 
+        }
+
+        function renderFilters() {
+            const container = document.getElementById('category-filters');
+            let html = '<button onclick="filterCatalog(\'all\')" class="filter-btn active bg-brand-black text-white px-4 py-2 border-2 border-brand-black font-bold uppercase text-sm shadow-hard transform scale-105" data-cat="all">Semua</button>';
+            
+            CATEGORIES.forEach(cat => {
+                html += `<button onclick="filterCatalog('${cat.id}')" class="filter-btn bg-white text-brand-black px-4 py-2 border-2 border-brand-black font-bold uppercase text-sm hover:bg-brand-gray hover:shadow-hard transition-all" data-cat="${cat.id}">${cat.name}</button>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function filterCatalog(category) {
+            // Update Button Styles (Brutalist toggle)
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if(btn.dataset.cat === category) {
+                    btn.className = "filter-btn active bg-brand-black text-white px-4 py-2 border-2 border-brand-black font-bold uppercase text-sm shadow-hard transform scale-105";
+                } else {
+                    btn.className = "filter-btn bg-white text-brand-black px-4 py-2 border-2 border-brand-black font-bold uppercase text-sm hover:bg-brand-gray hover:shadow-hard transition-all";
+                }
+            });
+
+            const items = category === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === category);
+            const container = document.getElementById('catalog-grid');
+            let html = '';
+            
+            if (items.length === 0) {
+                 html = `<div class="col-span-full text-center py-20 text-gray-400 font-bold uppercase">Belum ada produk.</div>`;
+            } else {
+                items.forEach(item => {
+                    html += `
+                    <div class="group border-2 border-brand-black bg-white hover:shadow-hard transition-all duration-200">
+                        <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden border-b-2 border-brand-black">
+                            <img src="./images/${item.img}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <!-- Fallback -->
+                            <div class="hidden flex-col items-center justify-center absolute inset-0 text-gray-400">
+                                <i data-lucide="image" class="w-12 h-12 mb-2 opacity-30"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="text-[10px] font-bold text-white bg-brand-black px-2 py-0.5 w-fit mb-2 uppercase">${item.category === 'packages' ? 'PAKET' : item.category}</div>
+                            <h3 class="font-heading font-bold text-xl leading-tight mb-2 uppercase">${item.name}</h3>
+                            <p class="text-xs text-gray-600 font-medium mb-4 leading-relaxed border-l-2 border-brand-orange pl-2">${item.desc}</p>
+                            <a href="https://wa.me/6281234567890?text=Tanya%20harga%20${item.name}" target="_blank" class="block w-full text-center py-2 border-2 border-brand-black font-bold uppercase text-sm hover:bg-brand-black hover:text-white transition-colors">
+                                Minta Harga
+                            </a>
+                        </div>
+                    </div>`;
+                });
+            }
+            container.innerHTML = html;
+            lucide.createIcons();
+        }
+
+        // --- NAVIGATION ---
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(pageId + '-page').classList.remove('hidden');
+            document.getElementById('mobile-menu').classList.add('hidden');
+            window.scrollTo({top: 0, behavior: 'instant'});
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // Init
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderFilters();
+            filterCatalog('all');
+        });
+    </script>
+</body>
+</html>
